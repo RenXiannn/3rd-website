@@ -1,0 +1,37 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', sans-serif; }
+body { background:#f8f9fc; color:#1f2937; }
+
+.container { max-width:1000px; margin:2rem auto; padding:0 1rem; }
+
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; }
+header h1 { font-size:1.5rem; font-weight:600; color:#4f46e5; }
+header button { background:#4f46e5; color:#fff; padding:0.5rem 1rem; border:none; border-radius:8px; cursor:pointer; transition:0.2s; }
+header button:hover { background:#4338ca; }
+
+.stats { display:flex; gap:1rem; margin-bottom:2rem; flex-wrap:wrap; }
+.card { flex:1; min-width:200px; background:#fff; border-radius:12px; padding:1.2rem; box-shadow:0 1px 6px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center; }
+.card h3 { font-size:0.75rem; color:#6b7280; font-weight:500; }
+.card p { font-size:1.5rem; font-weight:600; }
+
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; flex-wrap:wrap; }
+.box { background:#fff; border-radius:12px; padding:1rem; box-shadow:0 1px 6px rgba(0,0,0,0.05); }
+
+.transaction { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem; padding:0.5rem 0; border-bottom:1px solid #f1f5f9; }
+.transaction:last-child { border-bottom:none; }
+.transaction-left { display:flex; align-items:center; gap:0.75rem; }
+.icon { width:36px; height:36px; border-radius:8px; display:flex; justify-content:center; align-items:center; color:#fff; font-size:1rem; flex-shrink:0; }
+.desc { font-weight:500; }
+.date-cat { font-size:0.75rem; color:#6b7280; }
+.amount { font-weight:600; }
+.amount.income { color:#16a34a; }
+.amount.expense { color:#dc2626; }
+
+.modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); display:none; justify-content:center; align-items:center; padding:1rem; z-index:100; }
+.modal.active { display:flex; }
+.modal-content { background:#fff; padding:1.5rem; border-radius:12px; width:100%; max-width:400px; position:relative; }
+.modal-content h2 { margin-bottom:1rem; font-size:1.25rem; font-weight:600; }
+.modal-content input, .modal-content select, .modal-content textarea { width:100%; padding:0.5rem; border:1px solid #d1d5db; border-radius:8px; margin-bottom:0.8rem; font-size:0.875rem; }
+.modal-content textarea { resize:none; }
+.modal-content button { width:100%; padding:0.6rem; background:#4f46e5; color:#fff; border:none; border-radius:8px; font-weight:500; cursor:pointer; transition:0.2s; }
+.modal-content button:hover { background:#4338ca; }
+.modal-close { position:absolute; top:0.75rem; right:0.75rem; background:none; border:none; font-size:1.25rem; cursor:pointer; color:#6b7280; }

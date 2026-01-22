@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoneyFlow Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MoneyFlow</h1>
+      <div>
+        <button onclick="openModal()">+ Add Transaction</button>
+        <button style="background:#dc2626; margin-left:0.5rem;" onclick="clearAllTransactions()">Clear All</button>
+      </div>
+    </header>
+
+    <div class="stats">
+      <div class="card"><div><h3>Current Balance</h3><p id="balance">$0.00</p></div></div>
+      <div class="card"><div><h3>Income</h3><p id="income">$0.00</p></div></div>
+      <div class="card"><div><h3>Expenses</h3><p id="expenses">$0.00</p></div></div>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <h3>Recent Transactions</h3>
+        <div id="transactions" style="margin-top:1rem;"></div>
+      </div>
+
+      <div class="box">
+        <h3>Spending by Category</h3>
+        <canvas id="categoryChart" style="margin-top:1rem;"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <h2>Add Transaction</h2>
+
+      <select id="type">
+        <option value="expense">− Expense</option>
+        <option value="income">+ Income</option>
+      </select>
+
+      <input type="text" id="description" placeholder="Description (optional)">
+      <input type="number" step="0.01" min="0.01" id="amount" placeholder="Amount" required>
+      <input type="text" id="category" placeholder="Category (optional)">
+      <input type="date" id="date" required>
+      <textarea id="notes" placeholder="Notes (optional)"></textarea>
+
+      <button onclick="addTransaction()">Add Transaction</button>
+    </div>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
